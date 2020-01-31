@@ -40,8 +40,9 @@ setup(
     package_data={'': ['LICENSE']},
 
     install_requires=[
+        'pathlib==1.0.1',
         'django>=1.8',
-        'django-debug-toolbar>=1.0',
+        'django-debug-toolbar==1.9',
     ],
     include_package_data=True,
     zip_safe=False,                 # because we're including static files
