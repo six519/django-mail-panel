@@ -1,11 +1,10 @@
 import os
 import sys
-from pathlib import Path
 
 from setuptools import find_packages, setup
 
 # allow setup.py to be run from any path
-os.chdir(str(Path(__file__).absolute().parent))
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 if 'publish' in sys.argv:
     if 'test' in sys.argv:
@@ -40,7 +39,6 @@ setup(
     package_data={'': ['LICENSE']},
 
     install_requires=[
-        'pathlib==1.0.1',
         'django>=1.8',
         'django-debug-toolbar==1.9',
     ],
